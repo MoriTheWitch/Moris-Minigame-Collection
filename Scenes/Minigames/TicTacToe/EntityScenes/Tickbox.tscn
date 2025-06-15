@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://rxx5jywytptb"]
+
+[ext_resource type="Script" uid="uid://co5tmwtgys15m" path="res://Scenes/Minigames/TicTacToe/Scripts/tickbox.gd" id="1_uuugo"]
+[ext_resource type="Texture2D" uid="uid://bgfw8cexch15e" path="res://Scenes/Minigames/TicTacToe/pngs/Box.png" id="2_ggi5s"]
+[ext_resource type="Texture2D" uid="uid://xqow1fiqgbjn" path="res://Scenes/Minigames/TicTacToe/pngs/O.png" id="3_spw4d"]
+[ext_resource type="Texture2D" uid="uid://dvbugiole5t0e" path="res://Scenes/Minigames/TicTacToe/pngs/X.png" id="4_n5agk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyf5m"]
+
+[node name="Tickbox" type="Area2D"]
+script = ExtResource("1_uuugo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ggi5s")
+
+[node name="OSprite" type="Sprite2D" parent="Sprite2D"]
+visible = false
+texture = ExtResource("3_spw4d")
+
+[node name="XSprite" type="Sprite2D" parent="Sprite2D"]
+visible = false
+texture = ExtResource("4_n5agk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.6, 1.6)
+shape = SubResource("RectangleShape2D_iyf5m")
+
+[connection signal="input_event" from="." to="." method="_on_clickm1_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

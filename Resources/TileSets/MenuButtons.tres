@@ -1,0 +1,26 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bos88wkvy3pqh"]
+
+[ext_resource type="Texture2D" uid="uid://fqnm174ab3wk" path="res://Resources/TileSetJpegs/Gem_game_hexagon_buttons_with_wood_frame.jpg" id="1_6r03p"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o8ebm"]
+texture = ExtResource("1_6r03p")
+texture_region_size = Vector2i(64, 64)
+4:6/size_in_atlas = Vector2i(26, 10)
+4:6/0 = 0
+35:6/size_in_atlas = Vector2i(26, 10)
+35:6/0 = 0
+4:20/size_in_atlas = Vector2i(26, 10)
+4:20/0 = 0
+35:20/size_in_atlas = Vector2i(26, 11)
+35:20/0 = 0
+4:35/size_in_atlas = Vector2i(26, 10)
+4:35/0 = 0
+4:49/size_in_atlas = Vector2i(26, 10)
+4:49/0 = 0
+35:49/size_in_atlas = Vector2i(26, 10)
+35:49/0 = 0
+35:35/size_in_atlas = Vector2i(26, 10)
+35:35/0 = 0
+
+[resource]
+sources/1 = SubResource("TileSetAtlasSource_o8ebm")

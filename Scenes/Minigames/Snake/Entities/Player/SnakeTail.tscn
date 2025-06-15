@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dasew2mi8riov"]
+
+[ext_resource type="Texture2D" uid="uid://ce6aijkpfxr45" path="res://Scenes/Minigames/Snake/PNGs/SnakeTail.png" id="1_ypm20"]
+
+[node name="SnakeTail" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ypm20")

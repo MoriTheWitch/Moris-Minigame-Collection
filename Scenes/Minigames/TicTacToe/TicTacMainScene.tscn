@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4h5xjtgm2cuc"]
+
+[ext_resource type="PackedScene" uid="uid://rxx5jywytptb" path="res://Scenes/Minigames/TicTacToe/EntityScenes/Tickbox.tscn" id="1_palps"]
+[ext_resource type="Script" uid="uid://cvjq8triw60gp" path="res://Scenes/Minigames/TicTacToe/TicTacGame.gd" id="1_xfyqe"]
+
+[node name="TicTacMainScene" type="Node2D"]
+script = ExtResource("1_xfyqe")
+
+[node name="Tickbox" parent="." instance=ExtResource("1_palps")]
+position = Vector2(272, 208)
+
+[node name="Tickbox2" parent="." instance=ExtResource("1_palps")]
+position = Vector2(336, 208)
+
+[node name="Tickbox3" parent="." instance=ExtResource("1_palps")]
+position = Vector2(400, 208)
+
+[node name="Tickbox4" parent="." instance=ExtResource("1_palps")]
+position = Vector2(272, 272)
+
+[node name="Tickbox5" parent="." instance=ExtResource("1_palps")]
+position = Vector2(336, 272)
+
+[node name="Tickbox6" parent="." instance=ExtResource("1_palps")]
+position = Vector2(400, 272)
+
+[node name="Tickbox7" parent="." instance=ExtResource("1_palps")]
+position = Vector2(272, 336)
+
+[node name="Tickbox8" parent="." instance=ExtResource("1_palps")]
+position = Vector2(336, 336)
+
+[node name="Tickbox9" parent="." instance=ExtResource("1_palps")]
+position = Vector2(400, 336)
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 176.0
+offset_right = 528.0
+offset_bottom = 384.0
+
+[node name="quit" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.044
+anchor_bottom = 0.077
+offset_left = 24.0
+offset_top = 80.0
+offset_right = 55.16
+offset_bottom = 94.984
+text = "QUIT"
+
+[node name="restart" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 80.0
+offset_right = 347.0
+offset_bottom = 111.0
+text = "RESTART"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 64.0
+offset_right = 184.0
+offset_bottom = 87.0
+
+[connection signal="pressed" from="Control/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Control/restart" to="." method="_on_restart_pressed"]

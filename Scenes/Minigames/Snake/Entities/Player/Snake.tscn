@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://fitmeicxyjdv"]
+
+[ext_resource type="Script" uid="uid://bm2n4n1qmoe8q" path="res://Scenes/Minigames/Snake/Entities/Player/SnakeMove.gd" id="1_m064x"]
+[ext_resource type="PackedScene" uid="uid://b8jjf2a1kvfp4" path="res://Scenes/Minigames/Snake/Entities/Player/SnakeHead.tscn" id="2_rbsr4"]
+[ext_resource type="PackedScene" uid="uid://djq4xya2ky3rq" path="res://Scenes/Minigames/Snake/Entities/Player/SnakeSegment.tscn" id="3_crf5m"]
+[ext_resource type="PackedScene" uid="uid://dasew2mi8riov" path="res://Scenes/Minigames/Snake/Entities/Player/SnakeTail.tscn" id="4_77tth"]
+
+[node name="Snake" type="Node2D"]
+script = ExtResource("1_m064x")
+
+[node name="SnakeHead" parent="." instance=ExtResource("2_rbsr4")]
+
+[node name="SnakeSegment" parent="." instance=ExtResource("3_crf5m")]
+position = Vector2(0, -32)
+
+[node name="SnakeTail" parent="." instance=ExtResource("4_77tth")]
+position = Vector2(0, -64)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

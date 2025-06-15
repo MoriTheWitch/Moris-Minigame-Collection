@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://c77kufqft44xx"]
+
+[ext_resource type="Script" uid="uid://viq3f28wrntu" path="res://Scenes/Menues/Main/MenuButtons.gd" id="1_viymu"]
+[ext_resource type="AudioStream" uid="uid://dq3q5efe2qs5h" path="res://Resources/Sounds/Stupid Shit/209578__zott820__cash-register-purchase.wav" id="2_vyaww"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 648.0
+script = ExtResource("1_viymu")
+
+[node name="QUIT" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 722.0
+offset_top = 430.0
+offset_right = 819.0
+offset_bottom = 461.0
+text = "QUIT GAME"
+
+[node name="PLAY" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 297.0
+offset_right = 413.0
+offset_bottom = 328.0
+text = "PLAY"
+
+[node name="MERP" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 427.0
+offset_right = 437.0
+offset_bottom = 458.0
+text = "MERPMERP"
+
+[node name="MerpSound" type="AudioStreamPlayer" parent="Control/MERP"]
+stream = ExtResource("2_vyaww")
+volume_db = -20.613
+
+[connection signal="pressed" from="Control/QUIT" to="Control" method="_on_quit_pressed"]
+[connection signal="pressed" from="Control/PLAY" to="Control" method="_on_play_pressed"]
+[connection signal="pressed" from="Control/MERP" to="Control" method="_on_merp_pressed"]
