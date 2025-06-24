@@ -51,15 +51,35 @@ func snakeMove():
 			segment.position = oldPosition
 			oldPosition = currentPosition
 		tail.position = oldPosition
-		setTailRotation()
 		for i in range(1, segmentsArr.size()-1):
 			setSegmentRotation(segmentsArr[i-1], segmentsArr[i], segmentsArr[i+1])
+		setTailRotation()
 
 
 
-func setSegmentRotation(prevSegment, segment, nextSegment:Node2D):
+
+func setSegmentRotation(prevSegment, segment:Node2D, nextSegment:Node2D):
+	var segmentSprite = segment.get_node("AnimatedSprite2D")
 	var positionDifferenceFront: Vector2 =  prevSegment.position - segment.position
-	var positionDifferenceBack: Vector2 = nextSegment.position - segment.position 
+	var positionDifferenceBack: Vector2 =   segment.position - nextSegment.position
+	var combinedPosition: Vector2 = positionDifferenceBack + positionDifferenceFront
+	print(combinedPosition)
+	if combinedPosition.x != 0 and combinedPosition.y == 0:
+		segment.rotation_degrees = 90
+		segmentSprite.frame = 0
+	elif combinedPosition.x == 0 and combinedPosition.y != 0:
+		segment.rotation_degrees = 0
+		segmentSprite.frame = 0
+	else:
+		segmentSprite.frame = 1
+		if combinedPosition.x == 32 and combinedPosition.y == 32: 
+			segment.rotation_degrees = 0
+		elif combinedPosition.x == -32 and combinedPosition.y == 32: 
+			segment.rotation_degrees = 90
+		elif combinedPosition.x == 32 and combinedPosition.y == -32: 
+			segment.rotation_degrees = 270
+		elif combinedPosition.x == -32 and combinedPosition.y == -32: 
+			segment.rotation_degrees = 180
 
 
 func setTailRotation():
