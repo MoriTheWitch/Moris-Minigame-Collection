@@ -32,5 +32,15 @@ offset_right = -13.0
 offset_bottom = -103.48
 text = "TicTacToe"
 
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 117.0
+offset_right = 394.0
+offset_bottom = 148.0
+text = "Snake
+"
+
 [connection signal="pressed" from="Control/BACK" to="Control" method="_on_back_pressed"]
 [connection signal="pressed" from="Control/TicTacToe" to="Control" method="_on_tic_tac_toe_pressed"]
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_snake_pressed"]
